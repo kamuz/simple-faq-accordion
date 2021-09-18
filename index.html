@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			font-family: 'Segoe UI', sans-serif;
+			font-size: 17px;
+		}
+		.faq {
+			max-width: 800px;
+			margin: 50px auto;
+		}
+		.qa {
+			border: 1px solid #eee;
+			margin-bottom: 10px;
+			padding: 5px 8px;
+		}
+		.qa .question {
+			font-weight: bold;
+			cursor: pointer;
+			position: relative;
+			padding-left: 20px;
+		}
+
+		.qa .question:before {
+			content: '▼';
+			position: absolute;
+			left: 0;
+			top: 0;
+			transform: rotate(-90deg);
+			transition: all 0.2s;
+		}
+		.qa .question.active:before {
+			transform: rotate(0);
+		}
+		.qa .answer {
+			display: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="faq">
+		<h2>Super Simple FAQ Accordion</h2>
+		<div class="qa">
+			<div class="question">Hello #1</div>
+			<div class="answer">
+				<p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Dignissimos cum, ipsam mollitia doloribus tempora beatae exercitationem est dolorum veniam illum eaque nam rerum consectetur asperiores dolores quae nostrum ab, deleniti!</p>
+				<p>Repellendus minus placeat earum quia sit, corporis fugiat corrupti similique quo nobis deserunt autem excepturi ad tempore commodi reprehenderit ipsum quas ullam sunt officiis, eius minima inventore soluta neque non.</p>
+				<p>Porro consequatur magnam assumenda a enim iure voluptatum nulla omnis repellat, nam molestiae. Et, reiciendis incidunt ab quam, possimus dolor harum placeat facere perspiciatis alias iusto, dolore, optio expedita aspernatur.</p>
+			</div>
+		</div>
+		<div class="qa">
+			<div class="question">Hello #2</div>
+			<div class="answer">
+				<p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Dignissimos cum, ipsam mollitia doloribus tempora beatae exercitationem est dolorum veniam illum eaque nam rerum consectetur asperiores dolores quae nostrum ab, deleniti!</p>
+				<p>Repellendus minus placeat earum quia sit, corporis fugiat corrupti similique quo nobis deserunt autem excepturi ad tempore commodi reprehenderit ipsum quas ullam sunt officiis, eius minima inventore soluta neque non.</p>
+			</div>
+		</div>
+		<div class="qa">
+			<div class="question">Hello #3</div>
+			<div class="answer">
+				<p>Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Dignissimos cum, ipsam mollitia doloribus tempora beatae exercitationem est dolorum veniam illum eaque nam rerum consectetur asperiores dolores quae nostrum ab, deleniti!</p>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$('.question').click(function(){
+			$(this).toggleClass('active');
+			$(this).next().slideToggle();
+		})
+	</script>
+</body>
+</html>
